@@ -40,6 +40,6 @@ module dual_port_ram
       q2 <= mem[addr2];     // read from address 2
   end
   
-  assign q1 = cs1 & oe1 ? q1 : 'hz;  // tri-state for read from address 1
-  assign q2 = cs2 & oe2 ? q2 : 'hz;  // tri-state for read from address 2
+  assign q1 = cs1 & oe1 ? q1 : 'hz;  //  address 1
+  assign q2 = cs2 & oe2 ? q2 : 'hz;  //  address 2
 endmodule
