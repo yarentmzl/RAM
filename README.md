@@ -24,18 +24,19 @@ module dual_port_ram
   reg [DATA_WIDTH-1:0] 	mem [DEPTH-1:0];
   
   always @ (posedge clk) begin
-    if (cs1 & we1)
-      mem[addr1] <= data1;  // write to address 1
+   if (cs1 & we1)
+      mem[addr1] <= data1; 
       
-    if (cs2 & we2)
-      mem[addr2] <= data2;  // write to address 2
-  end
+   if (cs2 & we2)
+      mem[addr2] <= data2; 
+ 
+ end
   
   always @ (negedge clk) begin
-    if (cs1 & oe1)
+   if (cs1 & oe1)
       q1 <= mem[addr1];     // read from address 1
       
-    if (cs2 & oe2)
+   if (cs2 & oe2)
       q2 <= mem[addr2];     // read from address 2
   end
   
